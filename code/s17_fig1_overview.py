@@ -1,7 +1,7 @@
-"""P4 manuscript Figure 1 (overview, v3): five steps in the order of Sections 4.1-4.5.
+"""Figure 1 of the article: overview of the five steps in the order of Sections 4.1-4.5.
 
 Boxes, arrows, and small schematic glyphs only. Glyph curves are qualitative shapes with no
-numbers on them; symbols follow sec3_overview.tex and sec4_method.tex.
+numbers on them; symbols follow Sections 3 and 4 of the article.
 
   python s17_fig1_overview.py --out DIR
 """

@@ -44,8 +44,8 @@ frozen Qwen2.5-7B-Instruct embeddings; CPU steps only read saved predictions.
 | German pool check | `s16_deu_check.py` | Section 5.3 |
 | Figures | `s17_fig1_overview.py`, `s18_fig_partition_v2.py` | Figures 1, 2 |
 
-The usage of each script is given in its docstring. Keys such as `H1` to `H13` in the result files are labels
-of internal checks; the article reports the underlying values, not these labels.
+The usage of each script is given in its docstring. Keys such as `H1` to `H13` and `J1` to `J5` in the result files are labels
+of individual analyses; the article reports the underlying values, not these labels.
 
 ## Random seeds
 

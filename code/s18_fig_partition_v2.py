@@ -1,6 +1,5 @@
-"""P4 manuscript Figure 2 (v2): three-way partition of Var(D_3) on the main datasets only.
+"""Figure 2 of the article: three-way partition of Var(D_3) on the main datasets.
 
-Panel (b) of s14_fig.py is dropped because Tables 3 and 4 already report R_text with intervals.
 Reads only saved analysis outputs; computes nothing new.
 
   python s18_fig_partition_v2.py --decomp FILE.json --out DIR

@@ -160,7 +160,7 @@ def main():
     L = lambda d: {x["id"]: x["V"] for x in pickle.load(open(f"{a.votes}/{d}.pkl", "rb"))["items"]}  # noqa: E731
     out = {}
 
-    # E1 and E3: BRIGHTER English (stage-3 models and thinned-target models)
+    # BRIGHTER English (models of s3_judge and thinned-target models)
     V = L("brighter_eng"); sp = json.load(open(f"{a.split}/splits.json"))["brighter_eng"]
     dev, test = sp["dev"], [i for i in sp["test"] if len(V[i]) >= 8]
     for tag, rd in (("main", f"{a.res3}/brighter_eng/main"), ("thin1", f"{a.res4}/brighter_eng/thin1"),
@@ -170,7 +170,7 @@ def main():
             out[f"brighter_eng/{tag}"] = analyse(f"brighter_eng/{tag}", [V[i] for i in dev], ens(runs, dev, "dev"),
                                                  [V[i] for i in test], ens(runs, test, "test"), 3, 5)
 
-    # E2: ChaosNLI (dev fit) and DICES-990 (cross-fitting on out-of-fold predictions)
+    # ChaosNLI (dev fit) and DICES-990 (cross-fitting on out-of-fold predictions)
     sp2 = json.load(open(f"{a.split}/splits_e2.json"))
     V = L("chaosnli"); runs = sorted(glob.glob(f"{a.res4}/chaosnli/main/seed*/probs.pkl"))
     if runs:

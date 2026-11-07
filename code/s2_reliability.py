@@ -47,7 +47,7 @@ def main():
     L = lambda name: pickle.load(open(f"{a.votes}/{name}.pkl", "rb"))["items"]
     out = {}
 
-    # H1: Spearman-Brown on the many-vote datasets, predicted and measured on one item set
+    # Spearman-Brown on the many-vote datasets, predicted and measured on one item set
     for name, min_votes in (("chaosnli", 40), ("dices_350", 40), ("dices_990", 40), ("brighter_eng", 20)):
         items = [x for x in L(name) if len(x["V"]) >= min_votes]
         ns = [3, 5, 10] + ([20] if min_votes >= 40 else [])
@@ -57,7 +57,7 @@ def main():
                      "sb_from_r33": {n: float(sb(r3, n / 3)) for n in ns},
                      "abs_err": {n: float(abs(sb(r3, n / 3) - rel[n]["pearson"])) for n in ns if n > 3}}
 
-    # H2: emotion data at n = 3
+    # emotion data at n = 3
     be = L("brighter_eng")
     out["H2_brighter_eng"] = split_rel(be, 3, rng)
     ge = L("goemotions")

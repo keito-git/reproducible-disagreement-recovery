@@ -1,6 +1,6 @@
 """Comparison predictors, frozen LLM, second datasets, and robustness checks.
 
-J1 majority-label classifiers (E(i) map) -> R_text; J2 surface-feature ridge -> R_text;
+Result keys: J1 majority-label classifiers (E(i) map) -> R_text; J2 surface-feature ridge -> R_text;
 J3 frozen-LLM embedding ridge -> R_text; J4 second datasets (DICES-350, BRIGHTER German) -> R_text;
 J5 checks: one-hot emotion CI and difference to NLI, ridge-alpha range sensitivity, per-seed R_text.
 All R_text use n = 3; bootstraps as in s10_explore (500, seed 7).
@@ -104,7 +104,7 @@ def main():
     evalset = {"brighter_eng": ([Vb[i] for i in test_b], 5), "chaosnli": ([Vc[i] for i in c["test"]], 20),
                "dices_990": ([Vd[i] for i in ids_d], 20)}
 
-    # ---- J2 surface features
+    # ---- surface features
     out["J2_surface"] = {}
     for data in evalset:
         sf = lambda ids, d=data: np.array([surface(txt[d](i)) for i in ids], float)  # noqa: E731
@@ -114,7 +114,7 @@ def main():
         print("J2", data, round(r["R_text"], 3), flush=True)
     dump()
 
-    # ---- J3 frozen LLM embeddings
+    # ---- frozen LLM embeddings
     out["J3_llm"] = {}
     for data in evalset:
         f = f"{R}/s13/llm/{data}.pkl"
@@ -129,7 +129,7 @@ def main():
         print("J3", data, round(r["R_text"], 3), flush=True)
     dump()
 
-    # ---- J1 majority-label classifiers vs soft-label models (matched conditions)
+    # ---- majority-label classifiers vs soft-label models (matched conditions)
     out["J1_hard"] = {}
     conds = {"brighter_eng": ("brighter_eng/n1868_thin7", f"{R}/s6/brighter_eng/n1868_thin7"),
              "chaosnli": ("chaosnli/rl_thin7", f"{R}/s5/chaosnli/rl_thin7"),
@@ -153,7 +153,7 @@ def main():
     out["J1_hard"]["all_ratio_ge_0.9"] = all(out["J1_hard"][d]["ratio_hard_to_soft"] >= 0.9 for d in conds)
     dump()
 
-    # ---- J4 second datasets
+    # ---- second datasets
     out["J4"] = {}
     spj = json.load(open(f"{a.split}/splits_j.json"))
     V3 = {i: x["V"] for i, x in L("dices_350").items()}; f3 = spj["dices_350"]["folds"]
@@ -182,7 +182,7 @@ def main():
     print("H13", out["H13"], flush=True)
     dump()
 
-    # ---- J5 checks
+    # ---- robustness checks
     out["J5"] = {}
     runs6 = sorted(glob.glob(f"{R}/s6/brighter_eng/n1868_thin7/seed*/probs.pkl"))
     O = {i: v for i, v in zip(Vb, onehot(list(Vb.values()), np.random.default_rng(400)))}

@@ -1,4 +1,4 @@
-"""Three-way partition of Var(D_3) per dataset (Figure 2).
+"""Three-way partition of Var(D_3) per dataset (values plotted in Figure 2).
 
 noise = 1 - r33, text-explained = m_E^2, stable-unexplained = r33 - m_E^2, where r33 = c(3,3)
 (disjoint 3-person groups) and m_E = corr(mapped model prediction, D_3). Reads the s4/s5/s6 JSON outputs.

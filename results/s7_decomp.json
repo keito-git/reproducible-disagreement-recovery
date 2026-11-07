@@ -1,0 +1,62 @@
+[
+ {
+  "label": "Emotion: BRIGHTER-eng (full)",
+  "r33": 0.4125917083795976,
+  "m_E": 0.36413429762086535,
+  "noise": 0.5874082916204024,
+  "explained": 0.13259378670384095,
+  "unexplained": 0.27999792167575666,
+  "explained_share_of_stable": 0.3213680353019853,
+  "nstar_E_i": 1.7611766020940718
+ },
+ {
+  "label": "Emotion: BRIGHTER-eng (matched)",
+  "r33": 0.4125917083795976,
+  "m_E": 0.33606001442281375,
+  "noise": 0.5874082916204024,
+  "explained": 0.11293633329386178,
+  "unexplained": 0.2996553750857358,
+  "explained_share_of_stable": 0.27372419513083557,
+  "nstar_E_i": 1.252503393742522
+ },
+ {
+  "label": "NLI: ChaosNLI (MNLI init, full)",
+  "r33": 0.17892215002117007,
+  "m_E": 0.2516240965611754,
+  "noise": 0.8210778499788299,
+  "explained": 0.06331468597022773,
+  "unexplained": 0.11560746405094234,
+  "explained_share_of_stable": 0.35386723199299996,
+  "nstar_E_i": 6.14763564676063
+ },
+ {
+  "label": "NLI: ChaosNLI (matched)",
+  "r33": 0.17892215002117007,
+  "m_E": 0.16431095976193277,
+  "noise": 0.8210778499788299,
+  "explained": 0.02699809149788749,
+  "unexplained": 0.15192405852328258,
+  "explained_share_of_stable": 0.15089295257570443,
+  "nstar_E_i": 2.7257196765319462
+ },
+ {
+  "label": "Safety: DICES-990 (full)",
+  "r33": 0.14699006469917109,
+  "m_E": 0.34101318344319054,
+  "noise": 0.8530099353008289,
+  "explained": 0.11628999128205912,
+  "unexplained": 0.030700073417111964,
+  "explained_share_of_stable": 0.7911418470361072,
+  "nstar_E_i": Infinity
+ },
+ {
+  "label": "Safety: DICES-990 (7 votes)",
+  "r33": 0.14699006469917109,
+  "m_E": 0.3032185368845805,
+  "noise": 0.8530099353008289,
+  "explained": 0.0919414811104257,
+  "unexplained": 0.055048583588745384,
+  "explained_share_of_stable": 0.6254945278008588,
+  "nstar_E_i": 17.369076510495788
+ }
+]

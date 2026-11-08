@@ -1,7 +1,7 @@
 # Reproducible disagreement recovery
 
 Code and derived results for the article
-"How Much Reproducible Human Disagreement Can Text Models Recover in Emotion, Inference, and Safety Annotation?"
+"How Much Reproducible Human Disagreement Can Text Models Recover?"
 
 The analysis measures how well item-level annotator disagreement repeats across disjoint annotator groups,
 maps model predictions to the expected disagreement of a group of the same size, and normalizes the
@@ -42,7 +42,7 @@ frozen Qwen2.5-7B-Instruct embeddings; CPU steps only read saved predictions.
 | One-hot votes | `s8_onehot.py` | Section 5.6, Table 6 |
 | Intervals, group sizes, redraws | `s10_explore.py` | Tables 2, 3, 5, Section 5.6 |
 | German pool check | `s16_deu_check.py` | Section 5.3 |
-| Figures | `s17_fig1_overview.py`, `s18_fig_partition_v2.py` | Figures 1, 2 |
+| Figures | `s21_fig1_overview.py`, `s18_fig_partition_v2.py` | Figures 1, 2 |
 
 The usage of each script is given in its docstring. Keys such as `H1` to `H13` and `J1` to `J5` in the result files are labels
 of individual analyses; the article reports the underlying values, not these labels.
